@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="#" />
+  <title>Breast Cancer Detection</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="head">Breast Cancer Detection</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-container">
+
+          <!-- Main Input For Receiving Query to our ML -->
+          <form action="{{ url_for('predict')}}" method="post" class="form-inline">
+            <div class="row">
+              <!-- <div class="col-md-6">
+                <img class="image" src="{{url_for('static', filename='img.jpg')}}" width="20%" height="20%" /> -->
+<!--               </div> -->
+              <div class="col-md-6">
+                <div class="container">
+                  <h4>Enter Cell Details</h4>
+                  <div class="form-group">
+                    <label for="clump_thickness">Clump Thickness </label>
+                    <input type="text" class="form-control" name="clump_thickness" required="required">
+                  </div>
+                  <div class="form-group">
+                    <label for="uniform_cell_size">Uniform Cell size</label>
+                    <input type="text" class="form-control" name="uniform_cell_size" required="required">
+                  </div>
+                  <div class="form-group">
+                    <label for="uniform_cell_shape">Uniform Cell shape</label>
+                    <input type="text" class="form-control" name="uniform_cell_shape" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="marginal_adhesion">Marginal Adhesion</label>
+                    <input type="text" class="form-control" name="marginal_adhesion" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="single_epithelial_size">Single Epithelial Cell Size</label>
+                    <input type="text" class="form-control" name="single_epithelial_size" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="bare_nuclei">Bare Nuclei</label>
+                    <input type="text" class="form-control" name="bare_nuclei" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="bland_chromatin">Bland Chromatin</label>
+                    <input type="text" class="form-control" name="bland_chromatin" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="normal_nucleoli">Normal Nucleoli</label>
+                    <input type="text" class="form-control" name="normal_nucleoli" required="required" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="mitoses">Mitoses</label>
+                    <input type="text" class="form-control" name="mitoses" required="required" />
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg">Predict Cancer</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        <br />
+        <center>
+          
+          
+          <h1 style="background:#17dffa">{{prediction_text}}</h1>
+        </center>
+        <br />
+</body>
+
+</html>
